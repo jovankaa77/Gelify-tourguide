@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geulify</title>
+    <style>
+      * {
+        margin: 0;
+        /*padding: 0;*/
+      }
+      @font-face {
+        src: url(font/Jua-Regular.ttf);
+        font-family: "jua";
+      }
+      @font-face {
+        src: url(font/OpenSansRegular.ttf);
+        font-family: "opensans";
+      }
+
+      /* BAGIAN HEADER */
+      header {
+        width: 100%;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-around;
+        box-sizing: border-box;
+        position: fixed;
+        box-shadow: 0px 2px 5px grey;
+        /*margin: 0px 0 0 0;*/
+        padding: 10px;
+        box-sizing: border-box;
+        /*position: absolute;*/
+        /* z-index: 100; */
+        /* margin: 0 0 50px 0; */
+      }
+      .logo-header {
+        /*border: 1px solid black;*/
+        height: 90px;
+        width: 10%;
+      }
+      .logo-header img {
+        width: 100%;
+        height: 100%;
+      }
+      .nav-header {
+        margin: 30px 0 0 0;
+      }
+
+      .nav-header a {
+        font-size: 20px;
+        text-decoration: none;
+        margin: 0 0 0 15px;
+        transition: 0.8s;
+        color: #333;
+      }
+
+      .nav-header a:hover {
+        color: white;
+        padding: 5px;
+        box-sizing: border-box;
+        background-color: #333;
+        border-radius: 10px;
+      }
+
+      @media (max-width: 800px) {
+        header {
+          display: inline-block;
+        }
+        .logo-header {
+          width: 30%;
+          margin: auto;
+        }
+        .nav-header {
+          text-align: center;
+          margin: 2px 0 0 0;
+        }
+        .nav-header a{
+          font-size:14px;
+        }
+      }
+
+      /* END HEADER */
+
+      /* HALAMAN UTAMA */
+
+      .container-home {
+        width: 80%;
+        padding: 20px;
+        margin: 0px auto;
+        box-sizing: border-box;
+        /*border: 1px solid black;*/
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        /* margin: 0 0 140px 0; */
+        /* border: 1px solid black; */
+      }
+      .home-kiri {
+        width: 50%;
+        padding: 20px;
+        box-sizing: border-box;
+        /*margin: -35px 0 0 0;*/
+      }
+      .home-kiri h5 {
+        color: #4f46e5;
+        font-size: 18px;
+        font-family: "jua";
+      }
+      .home-kiri h2 {
+        font-size: 41px;
+        margin: 0 0 15px 0;
+        font-family: "jua";
+        color: rgb(82, 78, 78);
+      }
+      .home-kiri h2 span {
+        color: #4f46e5;
+      }
+      .home-kiri h2 span .lib {
+        color: purple;
+      }
+      .home-kiri p {
+        /*margin: -15px 0 0 0;*/
+        font-size: 18px;
+        font-family: "opensans";
+      }
+      .home-kiri1 a {
+        margin: 0 0 10px 0;
+        text-decoration: none;
+        /*border: 1px solid black;*/
+        border-radius: 15px;
+        box-shadow: 2px 2px 5px grey;
+        background-color: #4f46e5;
+        color: white;
+        padding: 10px;
+        box-sizing: border-box;
+        transition: 0.8s;
+        font-family: "opensans";
+      }
+      .home-kiri1 a:hover {
+        background-color: #333;
+        color: #fff;
+      }
+      .home-kanan {
+        width: 45%;
+        /*border: 1px solid black;*/
+      }
+      .home-kanan img {
+        width: 100%;
+        /*height: 100%;*/
+      }
+      .home-kanan img {
+        border-top-left-radius: 30%;
+        border-bottom-right-radius: 30%;
+      }
+
+      @media (max-width: 950px) {
+        .home-kanan {
+          display: none;
+        }
+        .home-kiri h2,
+        h5,
+        p {
+          /*font-size: 32px;*/
+          text-align: center;
+        }
+        .home-kiri h2 {
+          font-size: 28px;
+        }
+        .home-kiri h5 {
+          font-size: 16px;
+        }
+        .home-kiri p{
+          font-size: 14px;
+        }
+        .home-kiri .home-kiri1 {
+          width: 100%;
+          display: flex;
+        }
+        .home-kiri .home-kiri1 a {
+          width: 100%;
+          text-align: center;
+          border: 1px solid blue;
+        }
+        .home-kiri {
+          width: 100%;
+        }
+      }
+      /* END HALAMAN UTAMA */
+
+      .pembatas {
+        /* width: 80%; */
+        /* margin: 30px auto; */
+        /* background-color: red; */
+        height: 180px;
+      }
+
+      /* CONTAINER KEBERAGAMAN BUDAYA */
+      .container-keberagaman-budaya {
+        width: 80%;
+        margin: 30px auto;
+        /* border: 1px solid black; */
+        text-align: center;
+      }
+
+      .tulisan-budaya h3 {
+        font-size: 48px;
+        margin: 0 0 9px 0;
+        /* font-family: "opensans"; */
+        /* font-weight: bold; */
+        font-family: "jua";
+        color: rgb(82, 78, 78);
+      }
+      .tulisan-budaya .p2 {
+        font-family: "opensans";
+        font-size: 18px;
+      }
+      .tulisan-budaya .p1 {
+        font-size: 18px;
+        color: rgb(21, 1, 229);
+        /* font-weight: bold; */
+        /* font-family: "opensans"; */
+        font-family: "jua";
+      }
+      /*	GAMBAR*/
+      .content-dua {
+        display: flex;
+        width: 80%;
+        margin: 30px auto;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .gambar-dua {
+        width: 40%;
+      }
+      .gambar-dua img {
+        width: 100%;
+      }
+
+      /*	KALIMAT  */
+      .kalimat-dua {
+        width: 50%;
+        display: flex;
+      }
+      .flex-dua {
+        margin: auto;
+      }
+      .flex-dua .p1 {
+        font-size: 18px;
+        color: rgb(21, 1, 229);
+        /* font-weight: bold; */
+        /* font-family: "opensans"; */
+        text-decoration: none;
+        font-family: "jua";
+      }
+
+      .flex-dua .p2 {
+        font-size: 18px;
+        font-family: "opensans";
+      }
+      .flex-dua h3 {
+        font-size: 45px;
+        margin: 0 0 9px 0;
+        font-family: "jua";
+        color: rgb(82, 78, 78);
+      }
+
+      @media (max-width: 800px) {
+        .tulisan-budaya h3 {
+          font-size: 36px;
+        }
+        .tulisan-budaya .p2 {
+          font-size: 13px;
+        }
+        .gambar-dua {
+          width: 100%;
+        }
+        .kalimat-dua {
+          width: 100%;
+        }
+        .flex-dua {
+          text-align: center;
+        }
+        .flex-dua .p2{
+          font-size:14px
+        }
+
+        .flex-dua h3 {
+          font-size: 25px;
+          margin: 0 0 9px 0;
+          font-family: "opensans";
+        }
+      }
+
+      /* END CONTAINER KEBERAGAMAN BUDAYA */
+
+      /* DESTINASI KATEGORI */
+      .container-kategori {
+        width: 80%;
+        /* border: 1px solid black; */
+        /* box-shadow: 0 0 5px #b8c9fb; */
+        box-shadow: 0.1px 0.1px 50px #d1d1d1;
+        margin: 100px auto;
+        display: flex;
+        justify-content: space-around;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 20px;
+      }
+      .kategori-nav p {
+        margin: 10px 0 0 0;
+        font-size: 18px;
+        color: #333;
+        transition: 0.8s;
+        font-family: "opensans";
+      }
+      .kategori-nav h5 {
+        font-family: "opensans";
+      }
+      .kategori-nav p:hover {
+        color: blue;
+        font-size: 33px;
+        font-weight: bold;
+        font-style: italic;
+      }
+      .kategori-content {
+        width: 60%;
+        /* border: 1px solid blue; */
+      }
+      .flex-kategori {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        /* border: 1px solid green; */
+      }
+      .box-kategori {
+        width: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .kategori-content img {
+        width: 100%;
+        height: 200px;
+        border-radius: 10px;
+        /* border: 1px solid black; */
+      }
+
+      .kategori-content p,
+      h2 {
+        margin: 10px 0 0 20px;
+        font-family: "opensans";
+      }
+      .cari {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        border-radius: 30px;
+      }
+      .cari input {
+        width: 100px;
+        border: none;
+        outline: none;
+        border-radius: 30px;
+        margin: 0 0 0 15px;
+      }
+      .cari img {
+        margin: auto;
+      }
+      .cari button {
+        width: 50px;
+        height: 30px;
+        margin: 10px auto;
+        background-color: purple;
+        color: #fff;
+        border-radius: 10px;
+        border: none;
+        transition: 0.8s;
+      }
+      .cari button:hover {
+        background-color: #333;
+        color: #fff;
+      }
+
+      @media (max-width: 700px) {
+        .container-kategori {
+          flex-wrap: wrap;
+        }
+        .kategori-nav {
+          width: 100%;
+        }
+        .kategori-content {
+          width: 100%;
+        }
+        .box-kategori {
+          display: inline;
+          margin: 30px 0 0 0;
+        }
+        .kategori-content p,
+        h2 {
+          margin: 10px 0 0 0;
+        }
+        .cari {
+          margin: 0 0 0 5px;
+        }
+      }
+
+      /* END DESTINASI KATEGORI */
+
+      /* CONTAINER SPONSOR */
+
+      .container-sponsor {
+        width: 80%;
+        display: flex;
+        justify-content: space-around;
+        margin: 20px auto;
+        /*border: 1px solid black;*/
+        flex-wrap: wrap;
+      }
+      .sponsor {
+        width: 15%;
+        display: flex;
+      }
+      .sponsor img {
+        margin: auto;
+        width: 100%;
+        /*opacity: 50%;*/
+      }
+      .sponsor-kalimat h5 {
+        color: #4f46e5;
+        font-size: 18px;
+        text-align: center;
+        font-family: "opensans";
+      }
+      @media (max-width: 800px) {
+        .sponsor {
+          width: 45%;
+          margin: 15px 0 0 0;
+        }
+      }
+
+      /* END SPONSOR */
+
+      /* FOOTER */
+      footer {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        background-color: #4f46e5;
+        padding: 15px;
+        box-sizing: border-box;
+      }
+      .footer-kiri {
+        margin: 30px 0 30px 0;
+        width: 40%;
+        /*border: 1px solid black;*/
+      }
+      .footer-kiri p {
+        font-size: 16px;
+        color: #fff;
+        font-family: "opensans";
+      }
+      .footer-kiri .foo {
+        font-size: 21px;
+        color: #fff;
+        font-weight: bold;
+        margin: 0 0 15px 0;
+        font-family: "opensans";
+      }
+      .footer-kanan {
+        margin: 30px 0 30px 0;
+        /*border: 1px solid black;*/
+        width: 40%;
+        display: flex;
+        justify-content: space-around;
+      }
+      .satu-footer h5 {
+        font-size: 21px;
+        color: #fff;
+        font-weight: bold;
+        font-family: "opensans";
+      }
+      .satu-footer p {
+        font-size: 16px;
+        color: #fff;
+        margin: 15px 0 0 0;
+        font-family: "opensans";
+      }
+      @media (max-width: 800px) {
+        footer {
+          flex-wrap: wrap;
+        }
+        .footer-kiri {
+          width: 100%;
+          text-align: center;
+        }
+        .footer-kanan {
+          width: 100%;
+        }
+      }
+      /* END FOOTER */
+
+      /* NAIK */
+      .up {
+        width: 100%;
+        /* border: 1px solid black; */
+        bottom: 0px;
+        padding: 20px;
+        box-sizing: border-box;
+        position: absolute;
+        margin: auto;
+        position: fixed;
+        margin: 0 0 15px 0;
+      }
+      .klik-up {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #bab5ff;
+        /* box-shadow: 0.1px 0.1px 50px #d1d1d1; */
+        display: flex;
+        float: right;
+        transition: 0.7s;
+        margin: 0 35px 0 0;
+      }
+      .klik-up img {
+        margin: auto;
+      }
+      .klik-up:hover {
+        background-color: antiquewhite;
+      }
+      @media (max-width: 800px) {
+        .up {
+          padding: 10px;
+          margin: 0 0 35px 0;
+        }
+        .klik-up {
+          margin: 0 1px 0 0;
+        }
+      }
+      /* END NAIK */
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo-header">
+        <img src="img/logo.png" />
+      </div>
+
+      <div class="nav-header">
+        <a href="index.html">Halaman Utama</a>
+        <a href="about.html">Tentang</a>
+        <a href="virtual-tour.html">Virtual Tour</a>
+        <a href="harga.html">Harga</a>
+      </div>
+    </header>
+
+    <div class="pembatas"></div>
+    <div class="up">
+      <a href=""
+        ><div class="klik-up">
+          <img src="img/top.png" width="30px" alt="" />
+        </div>
+      </a>
+    </div>
+
+    <!-- HALAMAN UTAMA -->
+    <div class="container-home">
+      <div class="home-kiri">
+        <h5>TOUR GUIDE</h5>
+        <br />
+        <h2>
+          Hi everyone, We are Geulify Tourr
+          <span> Guide<span class="lib"> Profes</span>ional</span> Destinasi
+          Wisata Indonesia
+        </h2>
+        <p>
+          Nikmati liburan anda bersama Tour Guide dan kami pastikan kenyamanan
+          serta keamanan anda terjamin. pililah destinasi Wisata selanjutnya dan
+          jangan lewatkan setiap detiknya
+        </p>
+        <br /><br />
+        <div class="home-kiri1">
+          <a href="">Info Lebih Lanjut</a>
+        </div>
+      </div>
+
+      <div class="home-kanan">
+        <img src="img/balonf.jpg" />
+      </div>
+    </div>
+    <br /><br /><br /><br /><br />
+
+    <!-- END HALAMAN UTAMA -->
+
+    <!-- CONTAINER KEBERAGAMAN -->
+    <div class="container-keberagaman-budaya">
+      <div class="tulisan-budaya">
+        <p class="p1">KHARISMA INDONESIA</p>
+        <h3>Temukan Keindahan Di Negara Indonesia</h3>
+        <p class="p2">
+          Nikmati berbagai macam budaya, keberagaman, kuliner dan keindahan alam
+          yang membuat-mu jatuh cinta <br />dan menjadikan Indonesia sebagai
+          destinasi-mu selanjutnya
+        </p>
+      </div>
+    </div>
+
+    <div class="content-dua">
+      <div class="gambar-dua">
+        <img src="img/destinasi-satu.png" />
+      </div>
+
+      <div class="kalimat-dua">
+        <div class="flex-dua">
+          <p class="p1">KEBERAGAMAN INDONESIA</p>
+          <br />
+          <h3>Keberagaman budaya yang bisa anda nikmati hanya di Indonesia!</h3>
+          <p class="p2">
+            Beragam budaya bisa kalian temukan di Indonesia. Mulai dari Bahasa
+            Daerah, Tari Tradisional, Senjata Traditional, Baju Daerah dan Lagu
+            Daerah yang bisa kalian nikmati di Indonesia yang kaya akan budaya
+            dan keberagamanya.
+          </p>
+          <br />
+          <a href="" class="p1">Selengkapnya --></a>
+        </div>
+      </div>
+    </div>
+    <!-- END CONTAINER KEBERAGAMAN -->
+
+    <!-- CONTAINER KATEGORI -->
+    <div class="container-kategori">
+      <div class="kategori-nav">
+        <h5 style="color: purple; font-size: 22px; font-weight: bold">
+          BERBAGAI KATEGORI DESTINASI
+        </h5>
+        <br />
+        <p onclick="gunung()">Gunung</p>
+        <p onclick="pantai()">Pantai</p>
+        <p onclick="kuliner()">Kuliner</p>
+        <br />
+        <div class="cari">
+          <img src="img/cari.png" alt="" /><input
+            type="text"
+            placeholder="Cari Kategori.."
+          />
+          <button type="submit">Cari</button>
+        </div>
+      </div>
+
+      <div class="kategori-content">
+        <div class="flex-kategori">
+          <div class="box-kategori">
+            <!-- <img
+              src="img/peta.png"
+              alt=""
+              style="width: 600px; height: 500px"
+            /> -->
+            <p id="kategoriGambarSatu"></p>
+            <p id="kategoriKalimatSatu"></p>
+          </div>
+
+          <div class="box-kategori">
+            <p id="kategoriGambarDua"></p>
+            <p id="kategoriKalimatDua"></p>
+          </div>
+
+          <div class="box-kategori">
+            <p id="kategoriGambarTiga"></p>
+            <p id="kategoriKalimatTiga"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END KATEGORI -->
+
+    <!-- CONGTAINER SPONSOR -->
+
+    <div class="sponsor-kalimat">
+      <h5>PARTNER KAMI</h5>
+    </div>
+    <div class="container-sponsor">
+      <div class="sponsor">
+        <img src="img/pesona_indonesia.png" />
+      </div>
+      <div class="sponsor">
+        <img src="img/tiketcom.png" />
+      </div>
+      <div class="sponsor">
+        <img src="img/traveloka.png" />
+      </div>
+      <div class="sponsor">
+        <img src="img/pegi.png" />
+      </div>
+    </div>
+    <!-- END SPONSOR -->
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-kiri">
+        <p class="foo">Geulify</p>
+        <p>Nikmati keseruan setiap detik nya.</p>
+      </div>
+
+      <div class="footer-kanan">
+        <div class="satu-footer">
+          <h5>Gunung</h5>
+          <p>Keindahan</p>
+          <p>Natural</p>
+        </div>
+
+        <div class="satu-footer">
+          <h5>Pantai</h5>
+          <p>Suasana</p>
+          <p>Sejuk</p>
+        </div>
+
+        <div class="satu-footer">
+          <h5>Kuliner</h5>
+          <p>Kenikmatan</p>
+          <p>Khas</p>
+        </div>
+      </div>
+    </footer>
+    <!-- FOOTER -->
+
+    <script type="">
+      function pantai() {
+        document.getElementById("kategoriGambarSatu").innerHTML =
+          '<img src="img/pantai/tominibay-sulawesi.png" alt="">';
+        document.getElementById("kategoriKalimatSatu").innerHTML =
+          "<p>SULAWESI UTARA</p><h2>Pantai Tomini Bay - Destinasi Alam</h2>";
+
+        document.getElementById("kategoriGambarDua").innerHTML =
+          '<img src="img/pantai/baron.png" alt="">';
+        document.getElementById("kategoriKalimatDua").innerHTML =
+          "<p>YOGYAKARTA</p><h2>Pantai Baron - Destinasi Alam</h2>";
+
+        document.getElementById("kategoriGambarTiga").innerHTML =
+          '<img src="img/pantai/labuanbajo.png" alt="">';
+        document.getElementById("kategoriKalimatTiga").innerHTML =
+          "<p>NUSA TENGGARA TIMUR</p><h2>Pantai Labuanbajo - Destinasi Alam</h2>";
+      }
+
+      function gunung() {
+        document.getElementById("kategoriGambarSatu").innerHTML =
+          '<img src="img/gunung/mera.png" alt="">';
+        document.getElementById("kategoriKalimatSatu").innerHTML =
+          "<p>JAWA TENGAH</p><h2>Gunung Merapi - Destinasi Alam</h2>";
+
+        document.getElementById("kategoriGambarDua").innerHTML =
+          '<img src="img/gunung/rinjani.png" alt="">';
+        document.getElementById("kategoriKalimatDua").innerHTML =
+          "<p>NUSA TENGGARA BARAT</p><h2>Gunung Rinjani - Destinasi Alam</h2>";
+
+        document.getElementById("kategoriGambarTiga").innerHTML =
+          '<img src="img/gunung/slamet.png" alt="">';
+        document.getElementById("kategoriKalimatTiga").innerHTML =
+          "<p>JAWA TENGAH</p><h2>Gunung Slamet - Destinasi Alam</h2>";
+      }
+
+      function kuliner() {
+        document.getElementById("kategoriGambarSatu").innerHTML =
+          '<img src="img/kuliner/pempek.png" alt="">';
+        document.getElementById("kategoriKalimatSatu").innerHTML =
+          "<p>SUMATERA SELATAN</p><h2>Kuliner Pempek - Destinasi Kuliner</h2>";
+
+        document.getElementById("kategoriGambarDua").innerHTML =
+          '<img src="img/kuliner/gudeg.png" alt="">';
+        document.getElementById("kategoriKalimatDua").innerHTML =
+          "<p>YOGYAKARTA</p><h2>Kuliner Gudeg - Destinasi Kuliner</h2>";
+
+        document.getElementById("kategoriGambarTiga").innerHTML =
+          '<img src="img/kuliner/rendang.png" alt="">';
+        document.getElementById("kategoriKalimatTiga").innerHTML =
+          "<p>SUMATERA BARAT</p><h2>Kuliner Rendang - Destinasi Kuliner</h2>";
+      }
+    </script>
+  </body>
+</html>

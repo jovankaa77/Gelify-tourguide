@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geulify</title>
+    <style>
+      * {
+        margin: 0;
+        /*padding: 0;*/
+      }
+      @font-face {
+        src: url(font/Jua-Regular.ttf);
+        font-family: "jua";
+      }
+      @font-face {
+        src: url(font/OpenSansRegular.ttf);
+        font-family: "opensans";
+      }
+      /* BAGIAN HEADER */
+      header {
+        width: 100%;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-around;
+        box-sizing: border-box;
+        position: fixed;
+        box-shadow: 0px 2px 5px grey;
+        /*margin: 0px 0 0 0;*/
+        padding: 10px;
+        box-sizing: border-box;
+        /*position: absolute;*/
+        /* z-index: 100; */
+        /* margin: 0 0 50px 0; */
+      }
+      .logo-header {
+        /*border: 1px solid black;*/
+        height: 90px;
+        width: 10%;
+      }
+      .logo-header img {
+        width: 100%;
+        height: 100%;
+      }
+      .nav-header {
+        margin: 30px 0 0 0;
+      }
+
+      .nav-header a {
+        font-size: 20px;
+        text-decoration: none;
+        margin: 0 0 0 15px;
+        transition: 0.8s;
+        color: #333;
+      }
+
+      .nav-header a:hover {
+        color: white;
+        padding: 5px;
+        box-sizing: border-box;
+        background-color: #333;
+        border-radius: 10px;
+      }
+
+      @media (max-width: 800px) {
+        header {
+          display: inline-block;
+        }
+        .logo-header {
+          width: 30%;
+          margin: auto;
+        }
+        .nav-header {
+          text-align: center;
+          margin: 2px 0 0 0;
+        }
+        .nav-header a{
+          font-size:14px;
+        }
+      }
+
+      .pembatas {
+        height: 220px;
+      }
+
+      .kalimat-about {
+        width: 80%;
+        margin: 10px auto;
+        text-align: center;
+      }
+      .kalimat-about h5 {
+        font-size: 18px;
+        color: #4f46e5;
+        font-family: "jua";
+      }
+      .kalimat-about h3 {
+        font-size: 45px;
+        font-family: "jua";
+        /*margin: -25px 0 0 0;*/
+        color: rgb(82, 78, 78);
+      }
+      .kalimat-about p {
+        font-size: 23px;
+        font-family: "opensans";
+      }
+
+      @media (max-width: 800px) {
+        .kalimat-about h3 {
+          font-size: 30px;
+          margin: -15px 0 0 0;
+        }
+        .kalimat-about p {
+          font-size: 14px;
+        }
+      }
+      .container-harga {
+        width: 80%;
+        margin: 30px auto;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      .box-harga {
+        width: 45%;
+        /* border: 1px solid green; */
+        padding: 20px;
+        box-sizing: border-box;
+        /* background-color: #d6f2ff; */
+        border-radius: 10px;
+        margin: 45px 0 0 0;
+        box-shadow: 0.1px 0.1px 50px #d1d1d1;
+      }
+      .box-harga.satu {
+        background-color: #d6f2ff;
+      }
+      .flex-harga {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      .kiri-harga {
+        margin: 0 10px 0 0;
+      }
+      .kiri-harga h5 {
+        /* border: 1px solid black; */
+        border-radius: 10px;
+        font-size: 18px;
+        color: #4f46e5;
+        font-weight: bold;
+        /* border-color: #4f46e5; */
+        margin: 0 0 10px 0;
+        font-family: "jua";
+      }
+      .kiri-harga h3 {
+        font-size: 48px;
+        margin: 0 0 10px 0;
+        font-weight: bold;
+        font-family: "jua";
+        color: rgb(82, 78, 78);
+      }
+      /* .kiri-harga p {
+        font-size: 18px;
+      } */
+      .flex-kanan {
+        display: flex;
+        margin: 0 0 12px 0;
+      }
+
+      .flex-kanan img {
+        margin: 0 10px 0 0;
+        width: 20px;
+      }
+      .button {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        background-color: #4f46e5;
+        color: #fff;
+        /* font-weight: bold; */
+        border-radius: 10px;
+        text-align: center;
+        font-size: 18px;
+        transition: 0.8s;
+        margin: 15px 0 0 0;
+      }
+      .button:hover {
+        background-color: #333;
+        color: #fff;
+      }
+      .box-harga.dua {
+        background-color: #fbc5fc;
+      }
+      .box-harga.tiga {
+        background-color: #dcf0c1;
+      }
+
+      @media (max-width: 800px) {
+        .kalimat-about .br {
+          margin: 0 0 15px 0;
+        }
+        .box-harga {
+          width: 100%;
+        }
+        .kiri-harga {
+          width: 100%;
+          text-align: center;
+          margin: 0 0 30px 0;
+        }
+        .flex-kanan p {
+          font-size: 14px;
+        }
+      }
+
+      /* END HARGA */
+      /* KONTAK */
+      .container-kontak {
+        width: 90%;
+        /* border: 1px solid black; */
+        margin: 50px auto;
+        padding: 20px;
+        box-sizing: border-box;
+        background-color: #e5bae7;
+        border-radius: 10px;
+        box-shadow: 0.1px 0.1px 50px #d1d1d1;
+      }
+      .kalimat-kontak {
+        text-align: center;
+      }
+      .kalimat-kontak h3 {
+        font-size: 48px;
+        color: rgb(82, 78, 78);
+        font-family: "jua";
+      }
+      .form-kontak {
+        width: 50%;
+        /* border: 1px solid black; */
+        margin: 30px auto;
+        padding: 20px;
+        box-sizing: border-box;
+        background-color: #fff;
+        border-radius: 30px;
+      }
+      .kontak input {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        border-color: grey;
+        outline: none;
+        border-width: 0.5px;
+      }
+
+      .kontak {
+        margin: 15px 0 0 0;
+      }
+      .kontak textarea {
+        width: 100%;
+        height: 100px;
+        border-radius: 10px;
+        outline: none;
+      }
+      .kontak button {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        background-color: #4f46e5;
+        color: #fff;
+        border: none;
+        font-size: 16px;
+        transition: 0.8s;
+      }
+      .kontak button:hover {
+        background-color: #333;
+        color: #fff;
+      }
+
+      @media (max-width: 800px) {
+        .form-kontak {
+          width: 100%;
+        }
+      }
+
+      /* END KONTAK */
+
+      /* FOOTER */
+      footer {
+        width: 100%;
+        background-color: #4f46e5;
+        display: flex;
+        justify-content: space-around;
+        padding: 15px;
+        box-sizing: border-box;
+      }
+      .footer-kiri {
+        margin: 30px 0 30px 0;
+        width: 40%;
+        /*border: 1px solid black;*/
+      }
+      .footer-kiri p {
+        font-size: 16px;
+        color: #fff;
+      }
+      .footer-kiri .foo {
+        font-size: 21px;
+        color: #fff;
+        font-weight: bold;
+        margin: 0 0 15px 0;
+      }
+      .footer-kanan {
+        margin: 30px 0 30px 0;
+        /*border: 1px solid black;*/
+        width: 40%;
+        display: flex;
+        justify-content: space-around;
+      }
+      .satu-footer h5 {
+        font-size: 21px;
+        color: #fff;
+        font-weight: bold;
+      }
+      .satu-footer p {
+        font-size: 16px;
+        color: #fff;
+        margin: 15px 0 0 0;
+      }
+      @media (max-width: 800px) {
+        footer {
+          flex-wrap: wrap;
+        }
+        .footer-kiri {
+          width: 100%;
+          text-align: center;
+        }
+        .footer-kanan {
+          width: 100%;
+        }
+      }
+      /* END FOOTER */
+
+      /* NAIK */
+      .up {
+        width: 100%;
+        /* border: 1px solid black; */
+        bottom: 0px;
+        padding: 20px;
+        box-sizing: border-box;
+        position: absolute;
+        margin: auto;
+        position: fixed;
+        margin: 0 0 15px 0;
+      }
+      .klik-up {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #bab5ff;
+        /* box-shadow: 0.1px 0.1px 50px #d1d1d1; */
+        display: flex;
+        float: right;
+        transition: 0.7s;
+        margin: 0 35px 0 0;
+      }
+      .klik-up img {
+        margin: auto;
+      }
+      .klik-up:hover {
+        background-color: antiquewhite;
+      }
+      @media (max-width: 800px) {
+        .up {
+          padding: 10px;
+          margin: 0 0 35px 0;
+        }
+        .klik-up {
+          margin: 0 1px 0 0;
+        }
+      }
+      /* END NAIK */
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo-header">
+        <img src="img/logo.png" />
+      </div>
+
+      <div class="nav-header">
+        <a href="index.html">Halaman Utama</a>
+        <a href="about.html">Tentang</a>
+        <a href="virtual-tour.html">Virtual Tour</a>
+        <a href="harga.html">Harga</a>
+      </div>
+    </header>
+    <div class="pembatas"></div>
+    <div class="up">
+      <a href=""
+        ><div class="klik-up">
+          <img src="img/top.png" width="30px" alt="" />
+        </div>
+      </a>
+    </div>
+
+    <div class="kalimat-about">
+      <h5>DESKRIPSI SELENGKAPNYA</h5>
+
+      <h3 class="br">Temukan harga impian anda!</h3>
+
+      <h3>Hanya di Gelify</h3>
+      <br />
+      <p>Harga impian anda sudah kami sediakan</p>
+    </div>
+
+    <!-- CONTAINER HARGA -->
+
+    <div class="container-harga">
+      <div class="box-harga satu">
+        <div class="flex-harga">
+          <div class="kiri-harga">
+            <h5 class="minggu">MINGGU</h5>
+            <h3>Rp.999k</h3>
+            <p>Raih harga ekslusif</p>
+          </div>
+          <div class="kanan-harga">
+            <div class="flex-kanan">
+              <img src="img/ceklis.png" alt="" />
+              <p>Recomended destinasi wisata</p>
+            </div>
+
+            <div class="flex-kanan">
+              <img src="img/ceklis.png" alt="" />
+              <p>Sudah termasuk transportasi</p>
+            </div>
+
+            <div class="flex-kanan">
+              <img src="img/ceklis.png" alt="" />
+              <p>Sudah termasuk hotel</p>
+            </div>
+
+            <div class="flex-kanan">
+              <img src="img/ceklis.png" alt="" />
+              <p>Menyediakan sarapan pagi dan malam</p>
+            </div>
+
+            <div class="flex-kanan">
+              <img src="img/ceklis.png" alt="" />
+              <p>Tersedia camera dan cetak foto gratis</p>
+            </div>
+          </div>
+        </div>
+        <div class="button">Liburan Sekarang</div>
+      </div>
+
+      <div class="box-harga dua">
+        <div class="flex-harga">
+          <div class="kiri-harga">
+            <h5 class="minggu">BULAN</h5>
+            <h3>Rp.2999k</h3>
+            <p>Raih harga ekslusif</p>
+          </div>
+          <div class="kanan-harga">
+            <div class="flex-kanan">
+              <img src="img/ceklis.png" alt="" />
+              <p>Recomended destinasi wisata</p>
+            </div>
+
+            <div class="flex-kanan">
+              <img src="img/ceklis.png" alt="" />
+              <p>Sudah termasuk transportasi</p>
+            </div>
+
+            <div class="flex-kanan">
+              <img src="img/ceklis.png" alt="" />
+              <p>Sudah termasuk hotel</p>
+            </div>
+
+            <div class="flex-kanan">
+              <img src="img/ceklis.png" alt="" />
+              <p>Menyediakan sarapan pagi dan malam</p>
+            </div>
+
+            <div class="flex-kanan">
+              <img src="img/ceklis.png" alt="" />
+              <p>Tersedia camera dan cetak foto gratis</p>
+            </div>
+          </div>
+        </div>
+        <div class="button">Liburan Sekarang</div>
+      </div>
+
+      <div class="box-harga tiga">
+        <div class="flex-harga">
+          <div class="kiri-harga">
+            <h5 class="minggu">TENTUKAN HARI</h5>
+            <h3>Rp.???</h3>
+            <p>Raih harga ekslusif</p>
+          </div>
+          <div class="kanan-harga">
+            <div class="flex-kanan">
+              <img src="img/ceklis.png" alt="" />
+              <p>Recomended destinasi wisata</p>
+            </div>
+
+            <div class="flex-kanan">
+              <img src="img/ceklis.png" alt="" />
+              <p>Sudah termasuk transportasi</p>
+            </div>
+
+            <div class="flex-kanan">
+              <img src="img/ceklis.png" alt="" />
+              <p>Sudah termasuk hotel</p>
+            </div>
+
+            <div class="flex-kanan">
+              <img src="img/ceklis.png" alt="" />
+              <p>Menyediakan sarapan pagi dan malam</p>
+            </div>
+
+            <div class="flex-kanan">
+              <img src="img/ceklis.png" alt="" />
+              <p>Tersedia camera dan cetak foto gratis</p>
+            </div>
+          </div>
+        </div>
+        <div class="button">Liburan Sekarang</div>
+      </div>
+    </div>
+
+    <!-- END HARGA -->
+    <!-- KONTAK  -->
+
+    <div class="container-kontak">
+      <div class="kalimat-kontak">
+        <h3>Informasi selanjutnya</h3>
+        <h3>hubungi kami</h3>
+      </div>
+      <div class="form-kontak">
+        <div class="kontak">
+          <p>Nama Lengkap :</p>
+          <br />
+          <input
+            type="text"
+            placeholder="Jovanka Alexandro"
+            autofocus
+            required
+          />
+        </div>
+
+        <div class="kontak">
+          <p>email :</p>
+          <br />
+          <input type="email" placeholder="Gelify77@gmail.com" required />
+        </div>
+
+        <div class="kontak">
+          <p>Subject :</p>
+          <br />
+          <input type="text" placeholder="Tour guide" />
+        </div>
+
+        <div class="kontak">
+          <p>Pesan :</p>
+          <br />
+          <textarea name="" placeholder="Pesan"></textarea>
+        </div>
+
+        <div class="kontak">
+          <button>Kirim</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-kiri">
+        <p class="foo">Geulify</p>
+        <p>Nikmati keseruan setiap detik nya.</p>
+      </div>
+
+      <div class="footer-kanan">
+        <div class="satu-footer">
+          <h5>Gunung</h5>
+          <p>Keindahan</p>
+          <p>Natural</p>
+        </div>
+
+        <div class="satu-footer">
+          <h5>Pantai</h5>
+          <p>Suasana</p>
+          <p>Sejuk</p>
+        </div>
+
+        <div class="satu-footer">
+          <h5>Kuliner</h5>
+          <p>Kenikmatan</p>
+          <p>Khas</p>
+        </div>
+      </div>
+    </footer>
+    <!-- FOOTER -->
+  </body>
+</html>

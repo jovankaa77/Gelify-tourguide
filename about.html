@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geulify</title>
+    <style>
+      * {
+        margin: 0;
+        /*padding: 0;*/
+      }
+      @font-face {
+        src: url(font/Jua-Regular.ttf);
+        font-family: "jua";
+      }
+      @font-face {
+        src: url(font/OpenSansRegular.ttf);
+        font-family: "opensans";
+      }
+      /* BAGIAN HEADER */
+      header {
+        width: 100%;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-around;
+        box-sizing: border-box;
+        position: fixed;
+        box-shadow: 0px 2px 5px grey;
+        /*margin: 0px 0 0 0;*/
+        padding: 10px;
+        box-sizing: border-box;
+        /*position: absolute;*/
+        /* z-index: 100; */
+        /* margin: 0 0 50px 0; */
+      }
+      .logo-header {
+        /*border: 1px solid black;*/
+        height: 90px;
+        width: 10%;
+      }
+      .logo-header img {
+        width: 100%;
+        height: 100%;
+      }
+      .nav-header {
+        margin: 30px 0 0 0;
+      }
+
+      .nav-header a {
+        font-size: 20px;
+        text-decoration: none;
+        margin: 0 0 0 15px;
+        transition: 0.8s;
+        color: #333;
+      }
+
+      .nav-header a:hover {
+        color: white;
+        padding: 5px;
+        box-sizing: border-box;
+        background-color: #333;
+        border-radius: 10px;
+      }
+
+      @media (max-width: 800px) {
+        header {
+          display: inline-block;
+        }
+        .logo-header {
+          width: 30%;
+          margin: auto;
+        }
+        .nav-header {
+          text-align: center;
+          margin: 2px 0 0 0;
+        }
+        .nav-header a{
+          font-size:14px;
+        }
+      }
+
+      .pembatas {
+        height: 220px;
+      }
+
+      /* END HEADER */
+
+      /* CONTAINER ABOUT */
+      .container-about {
+        width: 80%;
+        display: flex;
+        margin: 30px auto;
+        /*border: 1px solid black;*/
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .box-about {
+        width: 27%;
+        padding: 15px;
+        box-sizing: border-box;
+        box-shadow: 0.1px 0.1px 50px #d1d1d1;
+        text-align: center;
+        margin: 30px auto;
+      }
+      .box-about h3 {
+        font-size: 21px;
+      }
+      .box-about p {
+        margin: 15px 0 0 0;
+        font-size: 18px;
+        font-family: "opensans";
+        /* color: rgb(85, 83, 83); */
+      }
+      .kalimat-about {
+        width: 80%;
+        margin: 10px auto;
+        text-align: center;
+      }
+      .kalimat-about h5 {
+        font-size: 18px;
+        color: #4f46e5;
+        font-family: "jua";
+      }
+      .kalimat-about h3 {
+        font-size: 45px;
+        color: rgb(82, 78, 78);
+        font-family: "jua";
+        /*margin: -25px 0 0 0;*/
+      }
+      .kalimat-about p {
+        font-size: 23px;
+        font-family: "opensans";
+        color: rgb(85, 83, 83);
+      }
+
+      .biodata {
+        width: 80%;
+        margin: 30px auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .box-biodata {
+        width: 45%;
+        box-shadow: 0.1px 0.1px 50px #d1d1d1;
+        padding: 15px;
+        box-sizing: border-box;
+        background-color: #fff;
+        text-align: center;
+      }
+      .box-biodata h4 {
+        font-size: 20px;
+        font-family: "jua";
+        color: rgb(82, 78, 78);
+      }
+      .box-biodata p {
+        font-size: 18px;
+        margin: 15px 0 0 0;
+        font-family: "opensans";
+      }
+      .box-about h3 {
+        font-family: "jua";
+        color: rgb(82, 78, 78);
+      }
+      @media (max-width: 800px) {
+        .box-about {
+          width: 100%;
+          margin: 30px 0 0 0;
+        }
+        .box-about p {
+          font-size:14px;
+        }
+        .kalimat-about h3 {
+          font-size: 30px;
+          margin: -15px 0 0 0;
+        }
+        .box-biodata {
+          width: 100%;
+          margin: 30px 0 0 0;
+        }
+        .kalimat-about p {
+          font-size: 14px;
+        }
+        .box-biodata p {
+          font-size:14px;
+        }
+      }
+
+      /* CONTAINER ABOUT 2 */
+
+      .container-about-2 {
+        width: 80%;
+        box-shadow: 0.1px 0.1px 50px #d1d1d1;
+        display: flex;
+        justify-content: space-between;
+        margin: 30px auto;
+        padding: 20px;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+      }
+      .gambar-book-satu {
+        width: 47%;
+      }
+      .gambar-book-satu img {
+        width: 100%;
+      }
+      .content-book-satu {
+        width: 50%;
+      }
+
+      .box-content-satu {
+        margin: 10px 0 0 0;
+        display: flex;
+        justify-content: space-between;
+      }
+      .kalimat-book-satu {
+        margin: 0 0 0 20px;
+      }
+      .kalimat-book-satu h3 {
+        font-size: 20px;
+        font-family: "jua";
+        color: rgb(82, 78, 78);
+      }
+      .kalimat-book-satu p {
+        font-size: 18px;
+        margin: 15px 0 0 0;
+        color: rgb(85, 83, 83);
+        font-family: "opensans";
+      }
+      @media (max-width: 800px) {
+        .gambar-book-satu {
+          width: 100%;
+        }
+        .content-book-satu {
+          width: 100%;
+        }
+        .box-content-satu img {
+          display: none;
+        }
+        .kalimat-book-satu p {
+          font-size:14px;
+        }
+      }
+
+      /* END CONTAINER ABOUT 2 */
+      /* FOOTER */
+      footer {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        background-color: #4f46e5;
+        padding: 15px;
+        box-sizing: border-box;
+      }
+      .footer-kiri {
+        margin: 30px 0 30px 0;
+        width: 40%;
+        /*border: 1px solid black;*/
+      }
+      .footer-kiri p {
+        font-size: 16px;
+        color: #fff;
+        font-family: "opensans";
+      }
+      .footer-kiri .foo {
+        font-size: 21px;
+        color: #fff;
+        font-weight: bold;
+        margin: 0 0 15px 0;
+        font-family: "opensans";
+      }
+      .footer-kanan {
+        margin: 30px 0 30px 0;
+        /*border: 1px solid black;*/
+        width: 40%;
+        display: flex;
+        justify-content: space-around;
+      }
+      .satu-footer h5 {
+        font-size: 21px;
+        color: #fff;
+        font-weight: bold;
+        font-family: "opensans";
+      }
+      .satu-footer p {
+        font-size: 16px;
+        color: #fff;
+        margin: 15px 0 0 0;
+        font-family: "opensans";
+      }
+      @media (max-width: 800px) {
+        footer {
+          flex-wrap: wrap;
+        }
+        .footer-kiri {
+          width: 100%;
+          text-align: center;
+        }
+        .footer-kanan {
+          width: 100%;
+        }
+      }
+      /* END FOOTER */
+
+      /* NAIK */
+      .up {
+        width: 100%;
+        /* border: 1px solid black; */
+        bottom: 0px;
+        padding: 20px;
+        box-sizing: border-box;
+        position: absolute;
+        margin: auto;
+        position: fixed;
+        margin: 0 0 15px 0;
+      }
+      .klik-up {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #bab5ff;
+        /* box-shadow: 0.1px 0.1px 50px #d1d1d1; */
+        display: flex;
+        float: right;
+        transition: 0.7s;
+        margin: 0 35px 0 0;
+      }
+      .klik-up img {
+        margin: auto;
+      }
+      .klik-up:hover {
+        background-color: antiquewhite;
+      }
+      @media (max-width: 800px) {
+        .up {
+          padding: 10px;
+          margin: 0 0 35px 0;
+        }
+        .klik-up {
+          margin: 0 1px 0 0;
+        }
+      }
+      /* END NAIK */
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo-header">
+        <img src="img/logo.png" />
+      </div>
+
+      <div class="nav-header">
+        <a href="index.html">Halaman Utama</a>
+        <a href="about.html">Tentang</a>
+        <a href="virtual-tour.html">Virtual Tour</a>
+        <a href="harga.html">Harga</a>
+      </div>
+    </header>
+
+    <div class="pembatas"></div>
+    <div class="up">
+      <a href=""
+        ><div class="klik-up">
+          <img src="img/top.png" width="30px" alt="" />
+        </div>
+      </a>
+    </div>
+
+    <div class="kalimat-about">
+      <h5>DESKRIPSI SELENGKAPNYA</h5>
+      <br />
+      <h3>Keterampilan profesional sudah tidak diragukan</h3>
+      <br />
+      <p>
+        Gambar Di Bawah Ini Merupakan informasi Untuk Megetahui Dan Memberi
+        kepercayaan Profesional Tour Guide Yang kami Sediakan untuk anda
+      </p>
+    </div>
+    <div class="container-about">
+      <div class="box-about">
+        <img src="img/about/mandarin1.png" width="200px" height="135px" />
+        <h3>Bahasa Inggris</h3>
+        <p>
+          Menguasai bahasa Inggris secara aktif dan juga sudah terbiasa
+          berkomunikasi dengan wisatawan mancanegara
+        </p>
+      </div>
+
+      <div class="box-about atas">
+        <img src="img/about/skill5.png" width="200px" height="135px" />
+        <h3>Social Skill Expert</h3>
+        <p>terbiasa bercerita dan berbicara di depan rombongan wisatawan</p>
+      </div>
+
+      <div class="box-about">
+        <img src="img/about/skill2.png" width="200px" height="135px" />
+        <h3>Pemahaman Sejarah</h3>
+        <p>
+          Memahami latar belakang sejarah destinasi wisata yang siap dikunjungi
+        </p>
+      </div>
+
+      <div class="box-about">
+        <img src="img/about/skill4.png" width="200px" height="135px" />
+        <h3>Time Keeper</h3>
+        <p>
+          Menguasai management waktu para wisatawan agar waktu berjalan dengan
+          efisien
+        </p>
+      </div>
+
+      <div class="box-about atas">
+        <img src="img/about/skill3.png" width="200px" height="135px" />
+        <h3>Rasa Humor dan Improvisasi</h3>
+        <p>
+          Terbiasa mengubah suasana agar mengantisipasi rasa bosan selama menuju
+          ke obyek wisata selanjutnya
+        </p>
+      </div>
+
+      <div class="box-about">
+        <img src="img/about/social1.png" width="200px" height="135px" />
+        <h3>Bahasa lainnya</h3>
+        <p>
+          Menguasai bahasa lainnya serta terbiasa berkomunikasi dengan wisatawan
+          dari luar negeri
+        </p>
+      </div>
+    </div>
+
+    <div class="biodata">
+      <div class="box-biodata">
+        <img src="img/about/diri.png" width="200px" height="135px" />
+        <h4>Gelify</h4>
+        <p>Profesional Tour Guide</p>
+        <p>Indonesia</p>
+      </div>
+
+      <div class="box-biodata">
+        <img src="img/about/univ.png" width="200px" height="135px" />
+        <h4>Lulusan Pariwisata terbaik</h4>
+        <p>Indonesia</p>
+        <p>Gelify77@gmail.com</p>
+      </div>
+    </div>
+
+    <div class="container-about-2">
+      <div class="gambar-book-satu">
+        <img src="img/about/icon-satu.png" />
+      </div>
+
+      <div class="content-book-satu">
+        <div class="box-content-satu">
+          <img src="img/about/wawasan.png" width="130px" />
+          <div class="kalimat-book-satu">
+            <h3>Wawasan Yang Luas</h3>
+            <p>Mempunyai wawasan yang luas siap memandu wisatawan kemanapun.</p>
+          </div>
+        </div>
+
+        <div class="box-content-satu">
+          <img src="img/about/skill1.png" width="130px" />
+          <div class="kalimat-book-satu">
+            <h3>Rekomendasi Tempat</h3>
+            <p>
+              Merekomendasi tempat wisata yang menarik sesuai daerah yang di
+              kunjungi
+            </p>
+          </div>
+        </div>
+
+        <div class="box-content-satu">
+          <img src="img/about/informasi.png" width="130px" />
+          <div class="kalimat-book-satu">
+            <h3>Memberi Informasi</h3>
+            <p>
+              Menemani, membimbing serta memberi informasi pada wisatawan yang
+              tengah mengadakan kegiatan wisata.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-kiri">
+        <p class="foo">Geulify</p>
+        <p>Nikmati keseruan setiap detik nya.</p>
+      </div>
+
+      <div class="footer-kanan">
+        <div class="satu-footer">
+          <h5>Gunung</h5>
+          <p>Keindahan</p>
+          <p>Natural</p>
+        </div>
+
+        <div class="satu-footer">
+          <h5>Pantai</h5>
+          <p>Suasana</p>
+          <p>Sejuk</p>
+        </div>
+
+        <div class="satu-footer">
+          <h5>Kuliner</h5>
+          <p>Kenikmatan</p>
+          <p>Khas</p>
+        </div>
+      </div>
+    </footer>
+    <!-- FOOTER -->
+  </body>
+</html>

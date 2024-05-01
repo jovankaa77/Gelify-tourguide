@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geulify</title>
+    <style>
+      * {
+        margin: 0;
+        /*padding: 0;*/
+      }
+      @font-face {
+        src: url(font/Jua-Regular.ttf);
+        font-family: "jua";
+      }
+      @font-face {
+        src: url(font/OpenSansRegular.ttf);
+        font-family: "opensans";
+      }
+      /* BAGIAN HEADER */
+      header {
+        width: 100%;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-around;
+        box-sizing: border-box;
+        position: fixed;
+        box-shadow: 0px 2px 5px grey;
+        /*margin: 0px 0 0 0;*/
+        padding: 10px;
+        box-sizing: border-box;
+        /*position: absolute;*/
+        /* z-index: 100; */
+        /* margin: 0 0 50px 0; */
+      }
+      .logo-header {
+        /*border: 1px solid black;*/
+        height: 90px;
+        width: 10%;
+      }
+      .logo-header img {
+        width: 100%;
+        height: 100%;
+      }
+      .nav-header {
+        margin: 30px 0 0 0;
+      }
+
+      .nav-header a {
+        font-size: 20px;
+        text-decoration: none;
+        margin: 0 0 0 15px;
+        transition: 0.8s;
+        color: #333;
+      }
+
+      .nav-header a:hover {
+        color: white;
+        padding: 5px;
+        box-sizing: border-box;
+        background-color: #333;
+        border-radius: 10px;
+      }
+
+      @media (max-width: 800px) {
+        header {
+          display: inline-block;
+        }
+        .logo-header {
+          width: 30%;
+          margin: auto;
+        }
+        .nav-header {
+          text-align: center;
+          margin: 2px 0 0 0;
+        }
+        .nav-header a{
+          font-size:14px;
+        }
+      }
+
+      .pembatas {
+        height: 220px;
+      }
+      .raja-ampat {
+        width: 80%;
+        margin: 30px auto;
+      }
+      .raja-ampat iframe {
+        width: 100%;
+      }
+      .container-raja-ampat {
+        width: 80%;
+        margin: 30px auto;
+        /* border: 1px solid black; */
+      }
+      .flex-raja-ampat {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 0 30px 0;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+      .flex-raja-ampat img {
+        width: 50%;
+      }
+      .flex-kalimat-ampat {
+        width: 40%;
+      }
+      .flex-kalimat-ampat h3 {
+        font-size: 25px;
+        font-family: "jua";
+        margin: 0 0 30px 0;
+      }
+      .daftar-pustaka {
+        width: 70%;
+        margin: 0 30px 0 30px;
+        border-left: 5px solid blue;
+      }
+      .flex-kalimat-ampat p {
+        font-family: "opensans";
+      }
+      .daftar-pustaka p {
+        margin: 0 0 0 20px;
+        font-family: "opensans";
+      }
+
+      @media (max-width: 800px) {
+        .flex-raja-ampat img {
+          width: 100%;
+        }
+        .flex-kalimat-ampat {
+          width: 100%;
+        }
+        .flex-kalimat-ampat h3 {
+          text-align: center;
+          margin: 30px 0 30px 0;
+        }
+      }
+
+      /* FOOTER */
+      footer {
+        width: 100%;
+        background-color: #4f46e5;
+        display: flex;
+        justify-content: space-around;
+        padding: 15px;
+        box-sizing: border-box;
+      }
+      .footer-kiri {
+        margin: 30px 0 30px 0;
+        width: 40%;
+        /*border: 1px solid black;*/
+      }
+      .footer-kiri p {
+        font-size: 16px;
+        color: #fff;
+        font-family: "opensans";
+      }
+      .footer-kiri .foo {
+        font-size: 21px;
+        color: #fff;
+        font-weight: bold;
+        font-family: "opensans";
+        margin: 0 0 15px 0;
+      }
+      .footer-kanan {
+        margin: 30px 0 30px 0;
+        /*border: 1px solid black;*/
+        width: 40%;
+        display: flex;
+        justify-content: space-around;
+      }
+      .satu-footer h5 {
+        font-size: 21px;
+        color: #fff;
+        font-weight: bold;
+        font-family: "opensans";
+      }
+      .satu-footer p {
+        font-size: 16px;
+        color: #fff;
+        margin: 15px 0 0 0;
+        font-family: "opensans";
+      }
+      @media (max-width: 800px) {
+        footer {
+          flex-wrap: wrap;
+        }
+        .footer-kiri {
+          width: 100%;
+          text-align: center;
+        }
+        .footer-kanan {
+          width: 100%;
+        }
+      }
+      /* END FOOTER */
+      /* NAIK */
+      .up {
+        width: 100%;
+        /* border: 1px solid black; */
+        bottom: 0px;
+        padding: 20px;
+        box-sizing: border-box;
+        position: absolute;
+        margin: auto;
+        position: fixed;
+        margin: 0 0 15px 0;
+      }
+      .klik-up {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #bab5ff;
+        /* box-shadow: 0.1px 0.1px 50px #d1d1d1; */
+        display: flex;
+        float: right;
+        transition: 0.7s;
+        margin: 0 35px 0 0;
+      }
+      .klik-up img {
+        margin: auto;
+      }
+      .klik-up:hover {
+        background-color: antiquewhite;
+      }
+      @media (max-width: 800px) {
+        .up {
+          padding: 10px;
+          margin: 0 0 35px 0;
+        }
+        .klik-up {
+          margin: 0 1px 0 0;
+        }
+      }
+      /* END NAIK */
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo-header">
+        <img src="img/logo.png" />
+      </div>
+
+      <div class="nav-header">
+        <a href="index.html">Halaman Utama</a>
+        <a href="about.html">Tentang</a>
+        <a href="virtual-tour.html">Virtual Tour</a>
+        <a href="harga.html">Harga</a>
+      </div>
+    </header>
+
+    <div class="pembatas"></div>
+    <div class="up">
+      <a href=""
+        ><div class="klik-up">
+          <img src="img/top.png" width="30px" alt="" />
+        </div>
+      </a>
+    </div>
+
+    <div class="raja-ampat">
+      <iframe src="https://www.google.com/maps/embed?pb=!4v1694351877218!6m8!1m7!1sCAoSLEFGMVFpcE5CQ2tQR3cwU0ZlMXlJN2V6Um9weWZBLVRZQzlkZlFvcmMwZ25k!2m2!1d-6.8624408!2d107.5945002!3f340!4f10!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="container-raja-ampat">
+      <div class="flex-raja-ampat">
+        <img src="img/uml.png" alt="" />
+        <div class="flex-kalimat-ampat">
+          <h3>Diagram UML</h3>
+          <p>
+            UML adalah singkatan dari "Unified Modeling Language," atau dalam bahasa indonesia yaitu "bahasa pemodelan terpadu "yang digunakan dalam rekayasa perangkat lunak, perencanaan sistem, dan dokumentasi desain untuk menggambarkan berbagai aspek dari sistem perangkat lunak yang akan dibangun. <br><br> UML menyediakan sejumlah UML menyediakan sejumlah notasi grafis yang digunakan untuk menggambarkan elemen-elemen dalam sistem perangkat lunak, seperti kelas, objek, use case, aktivitas, komponen, dan lainnya. Melalui notasi-notasi ini, UML membantu dalam <br><br> UML memiliki berbagai jenis diagram, seperti diagram kelas, diagram use case, diagram aktivitas, dan banyak lainnya, yang masing-masing memiliki tujuan dan notasi khusus untuk menggambarkan aspek tertentu dari sistem perangkat lunak. Penggunaan UML dapat sangat bervariasi tergantung pada fase proyek perangkat lunak yang sedang berjalan, kebutuhan analisis, dan preferensi tim pengembang. <br><br> Dengan menggunakan UML, pengembang perangkat lunak dapat menggambarkan, merancang, dan mengelola sistem perangkat lunak dengan lebih efektif, yang pada gilirannya membantu dalam pengembangan produk yang lebih baik dan proyek yang lebih sukses.
+          </p>
+        </div>
+      </div>
+
+      <p style="font-family: 'opensans'">
+        Berikut diagram-diagram dalam UML: <br>
+<br>
+<b>Structural Diagram</b>
+
+<br><br>
+  A. Class diagram yaitu Untuk mengembangkan sebuah sistem, software engineer dan developer membutuhkan sebuah diagram. Diagram yang umum digunakan adalah diagram dari bahasa pemodelan UML (Unified Modeling Language), yang terdiri dari diagram perilaku dan diagram struktur. Memperlihatkan struktur sistem mulai dari kelas, sistem, atribut dan hubungan antar object
+<br><br>
+  <ol>
+    <b>Fungsi :</b>
+<br><br>
+    1. Memvisualisasikan model data sebuah sistem, baik yang sederhana maupun dengan kompleks.<br> 
+    2. Membantu mengetahui kode spesifik tertentu yang perlu diprogram dan diimplementasikan ke struktur sistem yang telah direncanakan<br>
+    3. Memperlihatkan bagaimana sistem bekerja, termasuk memperlihatkan hubungan antara komponen sistem<br>
+    <b>Komponen</b>
+<br><br> 
+    <img src="img/class.png" width="500px">
+
+  </ol>
+<br><br>
+
+  B.  Object Diagram adalah diagram menghasilkan gambaran struktur model sebuah sistem, dalam kurun waktu tertentu. Diagram objek yang berasal dari class diagram, sehingga object diagram tergantung pada class diagram. Object Diagram, biasanya disebut sebagai Instance diagram, karena sangat mirip dengan class diagram. Seperti class diagram, Object Diagram juga mengerahkan hubungan antara objek, tetapi Object Diagram memakai contoh-contoh dunia nyata. Object diagram dipakai untuk mengambarkan bagaimana sistem akan terlihat seperti pada waktu tertentu. Karena ada data yang tersedia di object diagram sering dipakai untuk menjelaskan hubungan yang kompleks antara objek.
+<br><br>
+  <ol>
+    <b>Fungsi :</b>
+<br><br>
+    1. Fungsi/Tujuan dari diagram harus dipahami dengan jelas untuk menerapkannya praktis. Tujuan dari Object Diagram yang mirip dengan Class Diagram. Perbedaannya adalah bahwa Class Diagram adalah model abstrak yang terdiri dari kelas dan hubungan mereka. <br>
+    <b>Komponen</b>
+<br><br> 
+    <img src="img/object.png" width="500px">
+
+  </ol>
+<br><br>
+
+  B.  Package diagram atau diagram paket merupakan salah satu jenis UML yang dipakai untuk mengelompokkan elemen-elemen seperti use case maupun class diagram. Package diagram sendiri sangat jarang digunakan dalam pemuatan sistem dengan skala kecil, sebab memang tidak terlalu dibutuhkan.Artinya package diagram digunakan hanya dalam pengembangan sistem dengan skala besar. Tentu tujuan sendiri agar lebih mudah dalam melakukan penyusunan.
+<br><br>
+  <ol>
+    <b>Fungsi :</b>
+<br><br>
+    1. Digunakan untuk mengelompokan use case diagram atau class diagram. <br>
+    2. Untuk menunjukan sebuah elemen dikelompokan atau diorganisasikan. <br>
+    <b>Komponen</b>
+<br><br> 
+    <img src="img/package.png" width="500px">
+
+  </ol>
+<br><br>
+
+C.  Composite Structure Diagram adalah diagram yang menggambarkan struktur internal dari pengklasifikasi terstruktur dengan menggunakan bagian, pelabuhan, dan konektor. Sebuah penggolong terstruktur mendefinisikan pelaksanaan penggolongan dan dapat mencakup kelas, komponen, atau penempatan node. memakai Composite Structure Diagram untuk menunjukkan rincian internal penggolongan dan untuk menggambarkan objek dan peran yang bekerja sama untuk melakukan perilaku yang mengandung penggolongan. Sebuah Composite Structure Diagram mirip dengan class diagram, tetapi menggambarkan bagian-bagian individu, bukan seluruh kelas. Sebelum Anda dapat menentukan struktur internal penggolongan, Anda juga harus menunjukkan wadah struktur atau membuka sebuah Composite Structure Diagram. 
+<br><br>
+  <ol>
+    <b>Fungsi :</b>
+<br><br>
+    1. diagram yang menggambarkan struktur internal dari pengklasifikasi terstruktur dengan menggunakan bagian, pelabuhan, dan konektor.  <br>
+    <b>Komponen</b>
+<br><br> 
+    <img src="img/Composite.png" width="500px">
+
+  </ol>
+<br><br>
+
+D. Diagram component atau komponen diagram ialah sesuatu yang digunakan untuk memperlihatkan sebuah organisasi serta keterkaitan dan ketergantungan diantara kumpulan komponen dalam sebuah sistem.
+<br><br>
+  <ol>
+    <b>Fungsi :</b>
+<br><br>
+    1. Sebagai framework sistem, dimana dalam hal ini memiliki tujuan untuk mempermudah perawatan dan pengelolaan dari sistem.  <br>
+    2. Sebagai source code perangkat lunak (software).<br>
+    <b>Komponen</b>
+<br><br> 
+    <img src="img/component.png" width="500px">
+
+  </ol>
+<br><br>
+
+E. Deployment Diagram adalah salah satu model diagram dalam UML untuk mengerahkan artefak dalam node. Deployment diagram digunakan untuk memvisualisasikan hubungan antara software dan hardware. Secara spesifik deployment diagram dapat membuat physical model tentang bagaimana komponen perangkat lunak (artefak) digunakan pada komponen perangkat keras, yang dikenal sebagai node. Ini adalah salah satu diagram paling penting dalam tingkat implementasi perangkat lunak dan ditulis sebelum melakukan coding.
+<br><br>
+  <ol>
+    <b>Fungsi :</b>
+<br><br>
+    1. Membangun file-file yang dapat dieksekusi dengan menggunakan teknik forward dan reverse engineering  <br>
+    2. Memvisualisasikan komponen dari suatu sistem.<br>
+    <b>Komponen</b>
+<br><br> 
+    <img src="img/deploy.png" width="500px">
+
+  </ol>
+<br><br>
+
+E. mendefinisikan dan memodelkan berbagai elemen sistem berdasarkan domain atau platform tertentu.
+<br><br>
+  <ol>
+    <b>Fungsi :</b>
+<br><br>
+    1. Penciptaan metamodel baru <br>
+    2. Ekstensi dan modifikasi metamod UML.<br>
+    <b>Komponen</b>
+<br><br> 
+    <img src="img/profile.png" width="500px">
+
+  </ol>
+<br><br>
+
+
+    <b>Behavioral Diagram</b>
+<br>
+<ol>
+<br><br> 
+  A. Activity Diagram merupakan rancangan aliran aktivitas atau aliran kerja dalam sebuah sistem yang akan dijalankan. Activity Diagram juga digunakan untuk mendefinisikan atau mengelompokan aluran tampilan dari sistem tersebut. Activity Diagram memiliki komponen dengan bentuk tertentu yang dihubungkan dengan tanda panah. Panah tersebut mengarah ke-urutan aktivitas yang terjadi dari awal hingga akhir.
+  <br><br>
+  <ol>
+    <b>Fungsi Activity Diagram</b>
+<br><br>
+    1. Memperlihatkan urutan aktifitas proses pada sistem. <br>
+    2. Membantu memahami proses secara keseluruhan. <br>
+    3. Activity Diagram dibuat berdasarkan sebuah atau berapa use case. <br>
+    4. Menggambarkan proses bisnis dan urutan aktivitas dalam sebuah proses. <br>
+<br><br>
+    <img src="img/activity.jpg" width="500px">
+    <img src="img/activity2.jpg" width="500px">
+
+  </ol>
+<br><br> 
+  B. Use case diagram merupakan diagram yang menggambarkan hubungan antara aktor dengan sistem. Use case diagram bisa mendeskripsikan sebuah interaksi antara satu atau lebih aktor dengan sistem yang akan dibuat. Use case diagram juga bisa digunakan untuk mengetahui fungsi apa saja yang ada di dalam sebuah sistem dan  bisa juga mempresentasikan sebuah interaksi aktor dengan sistem. Komponen tersebut kemudian menjelaskan komunikasi antara aktor,  dengan sistem yang ada. 
+<br><br>
+  <ol>
+      Use case diagram mempunyai 3 komponen ,yaitu :
+<br><br>
+    <b>1. Sistem</b>
+    Menyatakan batasan sistem dalam relasi dengan aktor-aktor yang menggunakannya (di luar sistem) dan fitur-fitur yang harus disediakan (dalam sistem).
+<br><br>
+    <b>2. Aktor</b>
+    Aktor adalah segala hal diluar sistem yang akan menggunakan sistem tersebut untuk melakukan sesuatu. Bisa merupakan manusia, sistem, atau device yang memiliki peranan dalam keberhasilan operasi dari sistem.
+<br><br>
+    <b>3. Use Case</b>
+    Use Case sendiri adalah gambaran fungsional dari sebuah sistem. Dengan demikian, antara konsumen dan juga pengguna pada sistem tersebut, akan mengerti atau paham mengenai fungsi sistem yang tengah dibangun.
+<br><br>
+    <img src="img/usecase.png" width="400px">
+  </ol>
+
+    
+
+<br><br> 
+  C. State Machine Diagram atau disebut juga sebagai Statechart diagram, merupakan diagram untuk menggambarkan transisi dan perubahan keadaan (dari satu state ke state lainnya) suatu objek dalam suatu sistem. Dinamakan state machine karena diagram tersebut pada dasarnya adalah mesin yang menggambarkan beberapa keadaan suatu objek dan bagaimana objek tersebut berubah berdasarkan kejadian internal ataupun eksternal.
+<br><br>
+  <ol>
+    <b>Fungsi</b>
+<br><br>
+    1. diagram yang menggambarkan transisi dan perubahan keadaan (dari satu state ke state lainnya) suatu objek pada program sebagai akibat dari stimulans yang diterima.
+    <br><br>
+
+    <b>Komponen : </b>
+    <br><br>
+    <img src="img/state.png" width="400px">
+  </ol>
+<br><br> 
+  D. Interaction Overview Diagram adalah pencangkokan secara bersama antara activity diagram dengan sequence diagram. Interaction Overview Diagram dapat dianggap sebagai activity diagram dimana semua aktivitas diganti dengan sedikit sequence diagram, atau bisa juga dianggap sebagai sequence diagram yang dirincikan dengan notasi activity diagram yang digunakan untuk menunjukkan aliran pengawasan.
+<br><br>
+  <ol>
+    <b>Fungsi</b>
+    <br><br>
+    1.  pembuatan diagram urutan adalah untuk mengetahui urutan kejadian yang dapat menghasilkan output yang diinginkan. Selain itu, tujuan dari diagram urutan ini mirip dengan activity diagram loh, seperti menggambarkan alur kerja dari sebuah aktivitas, serta dapat menggambarkan aliran data dengan lebih detail, termasuk data atau perilaku yang diterima atau dikirimkan.
+<br><br>
+    <b>Komponen</b>
+<br><br>
+    <img src="img/itteration.png" width="500px">
+  </ol>
+<br><br> 
+  E. Apa itu sequence diagram? Sequence diagram adalah contoh diagram Unified Modeling Language (UML) yang memvisualisasikan alur interaksi antar objek atau komponen pada suatu proses atau sistem.
+  <ol>
+    <b>Fungsi :</b>
+    <br><br>
+    1. Representasi Visual Tujuan pertama dari sequence diagram adalah untuk memberikan gambaran yang jelas dari aliran proses atau sistem. Detail penggunaan UML dapat digambarkan dengan jelas <br> menggunakan sequence diagram, sehingga dapat membantu memahami persyaratan dan fungsionalitas sistem. <br> <br> 
+    2. Memodelkan Langkah Anda akan lebih mudah dalam mengidentifikasi potensi masalah ketika langkah-langkah yang dibutuhkan dalam suatu proses telah dipetakan secara visual. Karena itulah, penggunaan sequence diagram adalah keputusan yang tepat untuk memodelkan operasi yang kompleks, logika dari prosedur, atau fungsi. <br><br> 
+    3. Memantau Proses Manfaat berikutnya yang bisa Anda peroleh dengan memakai sequence diagram adalah kemudahan untuk melihat objek dan komponen berbeda melakukan interaksi satu sama lain untuk menyelesaikan sebuah proses. Selain itu, Anda juga dapat mengidentifikasi area mana saja yang komunikasi atau koordinasinya perlu ditingkatkan. Hal tersebut bisa dipantau tentu saja karena ada representasi hubungan antara berbagai bagian sistem. <br><br> 
+    4. Memahami Kebutuhan Sistem Terakhir, pemetaan melalui sequence diagram adalah langkah untuk memahami fungsionalitas detail dari skenario yang ada atau yang akan datang. Sehingga dapat diidentifikasi potensi sumber daya tambahan atau kebutuhan sistem secara dini.
+
+Sequence Diagram Adalah: Pengertian, Simbol, dan Manfaatnya
+<br><br>
+  <b>Komponen</b>
+  <br><br>
+  <img src="img/sequence.jpeg" width="400px"> 
+  </ol>
+</ol>
+
+<br><br>
+  F. Communication Diagram adalah suatu diagram yang mengambarkan struktur interaksi yang terdapat disekitar objek (seperti halnya sequence diagram) dan hubungannya terhadap yang lainnya.
+  Communication Diagram lebih mengedepankan peran setiap objek dan bukan pada waktu pengiriman pesan (message).
+  Communication diagram mirip dengan sequence diagram. Yang membedakan Communication diagram dari yang lain adalah diagram yang mengarahkan objek-objek dan asosiasi dengan objek-objek yang lain dalam sistem bersamaan dengan interaksinya. Asosiasi ini tidaklah dijelaskan dalam sequence diagram.
+
+  <ol>
+    <b>Fungsi :</b>
+    <br><br>
+    1. Model pesan melalui antar peran atau objek yang mengirimkan operasi penggunaan dan fungsionalitas kasus. <br> <br> 
+    2. Mekanisme model dalam desain arsitektur system. logika dari prosedur, atau fungsi. <br><br> 
+    3. Model skenario alternatif dalam kasus pemakaian atau operasi yang melibatkan kolaborasi dari berbagai interaksi dan objek. <br><br> 
+    4. Tangkap interaksi yang mengarahkan pesan yang dilewati antar peran dan objek dalam skenario kolaborasi.
+    <br><br>
+    <b>Komponen</b>
+<br><br> 
+    1. Object : Objek adalah instance dari sebuah kelas  yang tersusun secara horizontal. Digambarkan sebagai sebuah kelas (kotak) dengan nama objek didalamnya yang diawali dengan sebuah titik koma (;). <br><br>
+    2. Aktor : Actor juga dapat berhubungan dengan objek , maka actor juga dapat diurutkan sebagai kolom. Simbolnya sama pada Actor Use Case Diagram. <br><br>
+    3. Message : Message digambarkan dengan anak panah yang mengarah antar obyek dan diberi label urutan nomor yang mengindikasikan urutan komunikasi yang terjadi antar obyek, seperti yang sudah digambarkan dan dijelaskan di atas.
+  </ol>
+
+<br><br>
+  G. Timing Diagram adalah diagram yang dipakai untuk mengatasi tingkah laku obyek sepanjang jangka waktu tertentu. Suatu timing diagram ialah bentuk khusus dari diagram sequence. Perbedaan timing diagram dan diagram sequence terletak pada sumbu dibalik sehingga waktu meningkat dari kiri ke kanan serta jalur hidup yang dimunculkan dalam ruang terpisah yang diatur secara vertikal. 
+  <br><br>
+  <ol>
+    <b>Fungsi :</b>
+    <br><br>
+    1. untuk memunculkan perubahan dalam keadaan / nilai dari satu atau lebih elemen dari waktu ke waktu. Hal ini juga dapat mengarahkan interaksi antara kejadian waktunya dan kendala waktu dan durasi yang mengaturnya.<br> 
+    <br><br>
+    <b>Komponen contoh</b>
+<br><br> 
+    <img src="img/timing.png" width="400px">
+
+  </ol>
+
+<br><br>
+  H. Interaction Overview Diagram ialah suatu diagram yang dipakai untuk melakukan visualisasi tentang kerjasama yang terjadi antara sequence diagram dengan activity diagram. Diagram ini juga biasanya disebut sebagai suatu activity diagram yang mana semua aktivitas digantikan dengan sequence diagram. Dapat juga disebut sebagai sequence diagram, lalu notasi activity diagramnya dibuat dapat rinci dipakak untuk memberikan informasi terkait aliran pengawasan. 
+
+
+  <ol>
+    <b>Fungsi :</b>
+    <br><br>
+    1. suatu diagram yang dipakai untuk melakukan visualisasi tentang kerjasama yang terjadi antara sequence diagram dengan activity diagram.<br> 
+    <br><br>
+    <b>Komponen contoh</b>
+<br><br> 
+    <img src="img/it-overview.jpg" width="500px">
+
+  </ol>
+<br><br>
+
+  
+
+
+        <br /><br />
+      </p>
+
+      <div class="daftar-pustaka">
+        <p style="font-family: 'opensans'">
+          <span style="color: blue; font-weight: bold">REFERENSI </span> <br />
+          <br />
+          - Ritonga, P., & Ritoga, P. (2018) "<i>
+            Pengertian Unified Modeling Language ( UML ) dan Modelnya menurut Pakar dan Ahli. Retrieved from</i
+          >"
+          <a
+            href="http://www.bangpahmi.com/2015/04/pengertian-unified-modelling-language-uml-dan-modelnya-menurut-pakar.htmlt"
+            >, http://www.bangpahmi.com/2015/04/pengertian-unified-modelling-language-uml-dan-modelnya-menurut-pakar.html/a
+          >
+          Di akses pada 03 January 2023 Pukul 09.25
+        </p>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-kiri">
+        <p class="foo">Geulify</p>
+        <p>Nikmati keseruan setiap detik nya.</p>
+      </div>
+
+      <div class="footer-kanan">
+        <div class="satu-footer">
+          <h5>Gunung</h5>
+          <p>Keindahan</p>
+          <p>Natural</p>
+        </div>
+
+        <div class="satu-footer">
+          <h5>Pantai</h5>
+          <p>Suasana</p>
+          <p>Sejuk</p>
+        </div>
+
+        <div class="satu-footer">
+          <h5>Kuliner</h5>
+          <p>Kenikmatan</p>
+          <p>Khas</p>
+        </div>
+      </div>
+    </footer>
+    <!-- FOOTER -->
+  </body>
+</html>
